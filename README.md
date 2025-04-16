@@ -36,9 +36,7 @@ Run this script on a fresh Ubuntu VM that will act as the **HAProxy load balance
 git clone https://github.com/yourusername/dotnet-ha-deploy.git
 cd dotnet-ha-deploy
 
-...
-
----
+```
 
 2. Make the Script Executable
 bash
