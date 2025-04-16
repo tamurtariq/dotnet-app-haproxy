@@ -38,16 +38,15 @@ cd dotnet-ha-deploy
 
 ```
 
-2. Make the Script Executable
-bash
-Copy
-Edit
+### 2. Make the Script Executable
+```bash
 chmod +x deploy_dotnet_haproxy.sh
-3. Run the Script
-bash
-Copy
-Edit
+```
+### 3. Run the Script
+```bash
+
 ./deploy_dotnet_haproxy.sh
+```
 🧑‍💻 Script Walkthrough
 The script will prompt you for:
 
@@ -80,25 +79,25 @@ HAProxy stats dashboard enabled at http://<domain>:8404 (default credentials: ad
 
 📦 Directory Structure on Web Servers
 php-template
-Copy
-Edit
+```bash
 /var/www/<project_name>/
 ├── <project_name>.dll
 ├── wwwroot/
 └── ...
+```
+
 Systemd service file is placed at:
 
 swift
-Copy
-Edit
+
 /etc/systemd/system/<project_name>.service
-📊 HAProxy Stats Dashboard
+## 📊 HAProxy Stats Dashboard
 Once deployed, view HAProxy stats at:
 
-arduino
-Copy
-Edit
+```arduino
+
 http://<your-domain>:8404/stats
+```
 Username: admin
 
 Password: admin
@@ -106,25 +105,25 @@ Password: admin
 🧪 Testing Access
 After deployment, you should be able to access your app using:
 
-cpp
-Copy
-Edit
+```cpp
+
 http://<your-domain>/
+```
 Each web server will respond with a unique message (based on its IP) so you can verify load balancing.
 
-🔐 SSL Support (Future Scope)
+## 🔐 SSL Support (Future Scope)
 You can enhance this setup by adding an Nginx reverse proxy with SSL termination in front of HAProxy or configure HAProxy for SSL directly.
 
-📌 Notes
+## 📌 Notes
 This script is intended for test environments and dev setups.
 
 For production, consider hardening SSH, using SSH keys instead of passwords, setting firewall rules, and using Let's Encrypt for SSL.
 
-🧑‍🏫 Contributing
+## 🧑‍🏫 Contributing
 Want to improve this or add Nginx SSL termination? Fork the repo and create a pull request!
 
-📄 License
+## 📄 License
 MIT License – feel free to use, modify, and share!
 
-🙌 Acknowledgments
+## 🙌 Acknowledgments
 Inspired by developers who want to quickly spin up test environments and validate HAProxy load balancing for .NET apps.
